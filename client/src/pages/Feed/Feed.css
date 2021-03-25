@@ -1,0 +1,47 @@
+.feed__status {
+  width: 90%;
+  margin: 1rem auto;
+}
+
+.feed__status form {
+  display: flex;
+  align-items: center;
+}
+
+.feed__status form * {
+  margin: 0 0.5rem;
+}
+
+.feed__control {
+  text-align: center;
+}
+
+.new-post__preview-image {
+  width: 15rem;
+  height: 7rem;
+}
+
+@media (min-width: 768px) {
+  .feed__status {
+    width: 30rem;
+  }
+}
+
+
+/*axios*/
+
+
+.home .post img{
+
+  position: absolute;
+  top:20px;
+  left: -100px;
+  opacity:0.6 ;
+  height: 200px;
+  width: 200px;
+}
+
+.home .post {
+  overflow: hidden;
+  padding-left: 180px;
+}

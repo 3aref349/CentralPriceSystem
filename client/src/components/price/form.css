@@ -1,0 +1,148 @@
+.form-wrapper{
+
+    display: flex; 
+    flex-direction:  row ;
+    justify-content:  center;
+    text-align: center;
+    align-items: center;
+ 
+
+}
+.Wrapper{
+  padding-top: 50px;
+}
+.row{
+    display: flex; 
+    flex-direction:  column ;
+    justify-content:  center;
+    text-align: center;
+    align-items: center;
+    padding-left: 10px;
+}
+
+.price-title{
+    text-align: center;
+}
+
+
+
+.form-control {
+    display: block;
+    min-width: 20%;
+    margin: 1em;
+    padding: 1em;
+    width: 10em;
+    border-radius: 8px;
+    border-style: none;
+    border: 1px solid #e4e6e8;
+    transition: 0.1s ease;
+    border-color: #fab83f;
+  }
+  
+ 
+  .event{
+    display: block;
+    min-width: 20%;
+    margin: 1em;
+    padding: 0;
+    width: 4em;
+    border-radius: 8px;
+    border-style: none;
+    border: 1px solid #e4e6e8;
+    transition: 0.1s ease;
+    border-color: #fab83f;
+    align-items: center;
+  }
+  .submitbtn{
+    background:#070652;
+    padding: 13px 20px;
+    color: #fff;
+    font-family: oswald, sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+    min-width: 400px;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 0;
+    border: 0;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    width: 10em;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+
+  /* Check box */
+
+  input[type=checkbox] + label {
+    display: block;
+    margin: 0.2em;
+    cursor: pointer;
+    padding: 0.2em;
+    font-size: 20px;
+    font-weight: 100;
+  }
+  
+  input[type=checkbox] {
+    display: none;
+  }
+  
+  input[type=checkbox] + label:before {
+    content: "\2714";
+    border: 0.1em solid #000;
+    border-radius: 0.2em;
+    display: inline-block;
+    width: 1em;
+    height: 1em;
+    padding-left: 0.2em;
+    padding-bottom: 0.3em;
+    margin-right: 0.2em;
+    vertical-align: bottom;
+    color: transparent;
+    transition: .2s;
+  }
+  
+  input[type=checkbox] + label:active:before {
+    transform: scale(0);
+  }
+  
+  input[type=checkbox]:checked + label:before {
+    background-color:  #fab83f;
+    border-color:  #fab83f;
+    color: #fff;
+  }
+  
+  input[type=checkbox]:disabled + label:before {
+    transform: scale(1);
+    border-color: #aaa;
+  }
+  
+  input[type=checkbox]:checked:disabled + label:before {
+    transform: scale(1);
+    background-color: #bfb;
+    border-color: #bfb;
+  }
+  .center{
+    text-align: center;
+    background-color:#f2f7f4;
+  }
+
+
+  input[type=text] {
+background-color: rgb(238, 238, 245);
+
+  }
+
+  ::placeholder {
+    color: red;
+    opacity: 1;
+    text-align: center;
+    
+  }
+  li{
+    padding: 18px;
+    font-size: 20px;
+    font-family: fantasy;
+  }

@@ -1,0 +1,61 @@
+.next{
+    align-self: center;
+}
+.labelpriceform{
+
+    color: #2b83ca;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 10px;
+    margin: 25px;
+    width: 220px;
+}
+  .submitbtn{
+    background:#070652;
+    padding: 13px 20px;
+    color: #fff;
+    font-family: oswald, sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 6px;
+    letter-spacing: 1px;
+    min-width: 400px;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 0;
+    border: 0;
+
+    width: 20em;
+    cursor: pointer;
+    border-radius: 8px;
+  }
+  .submitbtn:hover{
+    color: #a04508;
+  }
+  .stepformbtns{
+    background:#070652;
+    padding: 13px 10px;
+    color: #fff;
+    font-family: oswald, sans-serif;
+    text-transform: uppercase;
+    font-size: 18px;
+    line-height: 6px;
+    letter-spacing: 1px;
+    min-width: 100px;
+    text-align: center;
+    font-weight: 400;
+    border-radius: 0;
+    border: 0;
+  
+    transition-duration: 0.5s;
+    width: 20em;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-bottom: 50px;
+  }
+  .stepformbtns:hover{
+    color: #a04508;
+  }
+
+li{
+  margin: 11px;
+}
