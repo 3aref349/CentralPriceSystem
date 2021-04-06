@@ -59,7 +59,7 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     backgroundColor: theme.palette.background.paper,
-    width:500,
+    width: 500,
   },
 }));
 
@@ -78,45 +78,45 @@ export default function FullWidthTabs() {
 
   return (
     <Wrapper>
-    <div className={classes.root}>
-  
+      <div className={classes.root}>
 
-     
+
+
         <AppBar position="static" color="default">
-        <Tabs
-          value={value}
-          onChange={handleChange}
-          indicatorColor="primary"
-          textColor="primary"
-          variant="fullWidth"
-          aria-label="full width tabs example"
+          <Tabs
+            value={value}
+            onChange={handleChange}
+            indicatorColor="primary"
+            textColor="primary"
+            variant="fullWidth"
+            aria-label="full width tabs example"
+          >
+            <Tab label="Add HO Form" {...a11yProps(0)} />
+            <Tab label="Add Product Form" {...a11yProps(1)} />
+            <Tab label="system Log" {...a11yProps(2)} />
+
+          </Tabs>
+        </AppBar>
+
+
+        <SwipeableViews
+          axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
+          index={value}
+          onChangeIndex={handleChangeIndex}
         >
-          <Tab label="Add HO Form" {...a11yProps(0)} />
-          <Tab label="Add Product Form" {...a11yProps(1)} />
-          <Tab label="system Log" {...a11yProps(2)} />
-         
-        </Tabs>
-      </AppBar>
-     
-  
-      <SwipeableViews
-        axis={theme.direction === 'rtl' ? 'x-reverse' : 'x'}
-        index={value}
-        onChangeIndex={handleChangeIndex}
-      >
-        <TabPanel value={value} index={0} dir={theme.direction}>
-          <AddHo />
-        </TabPanel>
-        <TabPanel value={value} index={1} dir={theme.direction}>
-         <AddProduct />
-        </TabPanel>
-        <TabPanel value={value} index={2} dir={theme.direction}>
-         <SystemLog />
-        </TabPanel>
- 
-      </SwipeableViews>
-      
-    </div>
+          <TabPanel value={value} index={0} dir={theme.direction}>
+            <AddHo />
+          </TabPanel>
+          <TabPanel value={value} index={1} dir={theme.direction}>
+            <AddProduct />
+          </TabPanel>
+          <TabPanel value={value} index={2} dir={theme.direction}>
+            <SystemLog />
+          </TabPanel>
+
+        </SwipeableViews>
+
+      </div>
     </Wrapper>
   );
 }

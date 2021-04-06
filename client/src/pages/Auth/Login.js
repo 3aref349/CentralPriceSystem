@@ -21,7 +21,7 @@ class Login extends Component {
         validators: [required, length({ min: 5 })]
       },
       formIsValid: false,
-      formAdminIsValid:false
+      formAdminIsValid: false
     }
   };
 

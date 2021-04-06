@@ -4,7 +4,7 @@ export default class SystemLog extends Component {
     render() {
         return (
             <div>
-                Get system Log 
+                Get system Log
             </div>
         )
     }

@@ -12,19 +12,13 @@ import ErrorHandler from "./components/ErrorHandler/ErrorHandler";
 
 import "./App.css";
 import LoginPage from "./pages/Auth/Login";
-import ConfirmPrice from "./components/price/ConfirmPrice";
+
 import AddConfirmation from "./components/price/AddConfirmation";
 
-import FormPrice from "./components/price/form-price";
-import Dashboard from "./components/Reports/Dashboard";
 
-import MasterForm from "./components/SForm/test";
 import Test2 from "./components/SForm/test2"
-import Configrations from "./components/Reports/Configrations";
-import AddPrice from "./components/SForm/testtwo";
-import PriceEventApi from "./components/addprice_api/AddForm";
+
 // import Testtwo from './components/SForm/testtwo';
-import Index from "./components/stepper/Index";
 import IndexConfigrations from "./components/Administrator/IndexConfigrations";
 import FullWidthTabs from "./components/Reports/DashboardNew";
 

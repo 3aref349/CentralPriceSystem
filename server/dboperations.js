@@ -47,14 +47,14 @@ async function getUsers(order) {
         request
           .query(
             "INSERT INTO EventApprovenew (eventid,approverName,approveStatus,approveDate) VALUES  ('" +
-              order.eventid +
-              "','" +
-              hesham +
-              "','" +
-              1 +
-              "','" +
-              order.approveDate +
-              "')"
+            order.eventid +
+            "','" +
+            hesham +
+            "','" +
+            1 +
+            "','" +
+            order.approveDate +
+            "')"
           )
           .then(function () {
             transaction
@@ -118,14 +118,14 @@ async function insertHO(order) {
         request
           .query(
             "INSERT INTO HOServers (ServerName,ServerIP,username,password) VALUES  ('" +
-              order.ServerName +
-              "','" +
-              order.ServerIp +
-              "','" +
-              order.userName +
-              "','" +
-              order.Password +
-              "')"
+            order.ServerName +
+            "','" +
+            order.ServerIp +
+            "','" +
+            order.userName +
+            "','" +
+            order.Password +
+            "')"
           )
           .then(function () {
             transaction
@@ -183,10 +183,10 @@ async function insertProduct(order) {
         request
           .query(
             "INSERT INTO Product (Number,Name) VALUES  ('" +
-              order.Number +
-              "','" +
-              order.Name +
-              "')"
+            order.Number +
+            "','" +
+            order.Name +
+            "')"
           )
           .then(function () {
             transaction
@@ -255,14 +255,14 @@ async function insertconfirm(order) {
         request
           .query(
             "INSERT INTO EventApprovenew (eventid,approverName,approveStatus,approveDate) VALUES  ('" +
-              order.eventid +
-              "','" +
-              hesham +
-              "','" +
-              1 +
-              "','" +
-              order.approveDate +
-              "')"
+            order.eventid +
+            "','" +
+            hesham +
+            "','" +
+            1 +
+            "','" +
+            order.approveDate +
+            "')"
           )
 
           // .query(
@@ -336,30 +336,30 @@ async function insertnewPrices(order) {
         request
           .query(
             "INSERT INTO priceEventDetails (eventid,ProductId,NewPrice) VALUES  ( '" +
-              order.eventid +
-              "','" +
-              1 +
-              "','" +
-              order.gasoline95 +
-              "'),('" +
-              order.eventid +
-              "','" +
-              2 +
-              "','" +
-              order.gasoline92 +
-              "'),('" +
-              order.eventid +
-              "','" +
-              3 +
-              "','" +
-              order.gasoline80 +
-              "'),('" +
-              order.eventid +
-              "','" +
-              4 +
-              "','" +
-              order.diesel +
-              "')"
+            order.eventid +
+            "','" +
+            1 +
+            "','" +
+            order.gasoline95 +
+            "'),('" +
+            order.eventid +
+            "','" +
+            2 +
+            "','" +
+            order.gasoline92 +
+            "'),('" +
+            order.eventid +
+            "','" +
+            3 +
+            "','" +
+            order.gasoline80 +
+            "'),('" +
+            order.eventid +
+            "','" +
+            4 +
+            "','" +
+            order.diesel +
+            "')"
           )
           .then(function () {
             var action = "Add Prices";
@@ -399,7 +399,7 @@ async function insertAppDate(order) {
   // const apptime=   Date.parse(this.state.apptime);
   //const appdate =  Date.parse(order.appdate);
   //console.log(appdate);
- 
+
 
   //  console.log(order.gasoline95);
   //  console.log(order.gasoline92)
@@ -409,13 +409,13 @@ async function insertAppDate(order) {
 
   var dbConn = await sql.connect(config);
   dbConn.connect().then(function () {
-    
-    const CreatDate= new Date().toISOString();
+
+    const CreatDate = new Date().toISOString();
     console.log(CreatDate);
-  
+
     console.log(order.appDate);
     console.log(order.appTime);
-    
+
     var transaction = new sql.Transaction(dbConn);
     transaction
       .begin()
@@ -431,13 +431,13 @@ async function insertAppDate(order) {
           .query(
             "INSERT INTO PriceEvents (creationDate,applicationDate,applicationTime) VALUES  ('" +
             CreatDate +
-              "','" +
-              order.appDate +
-              "','" +
-              order.appTime +
-              "')"
+            "','" +
+            order.appDate +
+            "','" +
+            order.appTime +
+            "')"
           )
-         
+
           // .query(
           //   "INSERT INTO system_log  (username,action,date) VALUES  ('" +
           //     user.name +
@@ -450,7 +450,7 @@ async function insertAppDate(order) {
           .then(function () {
             const date = new Date().toISOString();
 
-             sql.query`INSERT INTO dbo.sec_logs (email,time,action) Values(${order.email},${date},${action})`;
+            sql.query`INSERT INTO dbo.sec_logs (email,time,action) Values(${order.email},${date},${action})`;
 
             transaction
               .commit()
@@ -525,14 +525,14 @@ async function insertOrders(order) {
         request
           .query(
             "INSERT INTO Orderss (Product,Message,City) VALUES  ('" +
-              order.product +
-              "','" +
-              order.qty +
-              "','" +
-              order.msg +
-              "','" +
-              order.city +
-              "')"
+            order.product +
+            "','" +
+            order.qty +
+            "','" +
+            order.msg +
+            "','" +
+            order.city +
+            "')"
           )
           .then(function () {
             transaction
@@ -773,8 +773,8 @@ async function loginUser(info) {
       const payload = {
         email,
       };
-      const token =  jwt.sign(payload, "process.env.jwt_secret");
-      
+      const token = jwt.sign(payload, "process.env.jwt_secret");
+
       sql.close();
       //RETURN THE CREATED TOKEN
       return { token };

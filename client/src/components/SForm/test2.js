@@ -90,154 +90,154 @@ padding:5px;
 
 `;
 function test2() {
-    const [display, setDisplay] = useState(true)
-    const [Date, SetDate] = useState([]);
-    const [time, setTime] = useState([]);
-    const [data, setData] = useState([]);
-    const [dataP, setDataP] = useState([]);
-    const [dataevent, setDataevent] = useState([]);
-    const [inputs, setInputs] = useState({});
-    const eventid = useRef(null);
+  const [display, setDisplay] = useState(true)
+  const [Date, SetDate] = useState([]);
+  const [time, setTime] = useState([]);
+  const [data, setData] = useState([]);
+  const [dataP, setDataP] = useState([]);
+  const [dataevent, setDataevent] = useState([]);
+  const [inputs, setInputs] = useState({});
+  const eventid = useRef(null);
 
-    const apiGet = () => {
-        fetch("http://localhost:7260/api/getpriceeventdetails")
-          .then((response) => response.json())
-          .then((json) => {
-            console.log(json);
-            setData(json);
-          });
+  const apiGet = () => {
+    fetch("http://localhost:7260/api/getpriceeventdetails")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        setData(json);
+      });
 
-      };
-      const apiGetevent = () => {
-        fetch("http://localhost:7260/api/geteventid")
-          .then((response) => response.json())
-          .then((json) => {
-            console.log(json);
-            setDataevent(json);
-          });
-      };
+  };
+  const apiGetevent = () => {
+    fetch("http://localhost:7260/api/geteventid")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        setDataevent(json);
+      });
+  };
 
-      const handleChange = (event) => {
-        event.persist();
-        setInputs((inputs) => ({
-          ...inputs,
+  const handleChange = (event) => {
+    event.persist();
+    setInputs((inputs) => ({
+      ...inputs,
 
-          [event.target.name]: event.target.value,
-        }));
-      };
-      const apiProduct = () => {
-        fetch("http://localhost:7260/api/products")
-          .then((response) => response.json())
-          .then((json) => {
-            console.log(json);
-            setDataP(json);
-          });
-      };
-
-
-
-      const apiPostTime = async () => {
-// const appDate =moment().calendar(inputs.appDate);
-// const appTime =moment().parseZone(inputs.appTime);
-
-        await fetch("http://localhost:7260/api/appPrice", {
-          method: "POST",
-          body: JSON.stringify({
-
-            appDate: moment(inputs.appDate),
-            appTime: toHHMMSS(inputs.appTime) ,
-
-
-          }),
-          headers: {
-            token: localStorage.getItem("token"),
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        })
-          .then((response) => response.json())
-          .then((json) => console.log(json));
-      };
-
-      const apiPost = async () => {
-
-        await fetch("http://localhost:7260/api/appPrices", {
-          method: "POST",
-          body: JSON.stringify({
-            eventid: parseFloat(eventid.current.value),
-            gasoline95: parseFloat(inputs.gasoline95),
-            gasoline92: parseFloat(inputs.gasoline92),
-            gasoline80: parseFloat(inputs.gasoline80),
-            diesel: parseFloat(inputs.diesel),
-          }),
-          headers: {
-            token: localStorage.getItem("token"),
-            "Content-type": "application/json; charset=UTF-8",
-          },
-        })
-          .then((response) => response.json())
-          .then((json) => console.log(json));
-      };
-
-
-      const handleSubmitTime = (event) => {
-        event.preventDefault();
-        apiPostTime();
-        console.log(inputs);
-      };
-
-      const handleSubmit = (event) => {
-        event.preventDefault();
-      
-        apiPost();
-        apiGetevent();
-        console.log(inputs);
-      };
-      useEffect(() => {
-        apiGet();
-        apiProduct();
-        apiGetevent();
-
-      }, []);
-    return (
-        <div>
-
-
-            <form onSubmit={handleSubmitTime} >
+      [event.target.name]: event.target.value,
+    }));
+  };
+  const apiProduct = () => {
+    fetch("http://localhost:7260/api/products")
+      .then((response) => response.json())
+      .then((json) => {
+        console.log(json);
+        setDataP(json);
+      });
+  };
 
 
 
+  const apiPostTime = async () => {
+    // const appDate =moment().calendar(inputs.appDate);
+    // const appTime =moment().parseZone(inputs.appTime);
 
-<div className="row">
-  <input
-    className="form-control"
-    type="date"
-    name="appDate"
-   // value={appDate}
-   onChange={handleChange}
-    required
-  />
-</div>
-<div className="row">
-  <input
-    className="form-control"
-    type="time"
-    name="appTime"
-    //value={Time}
-    onChange={handleChange}
-    required
-  />
-</div>
-<div className="row">
-<button  className=" submitbtn"  onClick={() => setDisplay(false)}  type="submit" >Click me </button>
+    await fetch("http://localhost:7260/api/appPrice", {
+      method: "POST",
+      body: JSON.stringify({
 
-</div>
+        appDate: moment(inputs.appDate),
+        appTime: toHHMMSS(inputs.appTime),
 
 
+      }),
+      headers: {
+        token: localStorage.getItem("token"),
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  };
 
-            </form>
-            {display ? <p>nothing to show here</p> :
+  const apiPost = async () => {
 
-            <form onSubmit={handleSubmit} >
+    await fetch("http://localhost:7260/api/appPrices", {
+      method: "POST",
+      body: JSON.stringify({
+        eventid: parseFloat(eventid.current.value),
+        gasoline95: parseFloat(inputs.gasoline95),
+        gasoline92: parseFloat(inputs.gasoline92),
+        gasoline80: parseFloat(inputs.gasoline80),
+        diesel: parseFloat(inputs.diesel),
+      }),
+      headers: {
+        token: localStorage.getItem("token"),
+        "Content-type": "application/json; charset=UTF-8",
+      },
+    })
+      .then((response) => response.json())
+      .then((json) => console.log(json));
+  };
+
+
+  const handleSubmitTime = (event) => {
+    event.preventDefault();
+    apiPostTime();
+    console.log(inputs);
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    apiPost();
+    apiGetevent();
+    console.log(inputs);
+  };
+  useEffect(() => {
+    apiGet();
+    apiProduct();
+    apiGetevent();
+
+  }, []);
+  return (
+    <div>
+
+
+      <form onSubmit={handleSubmitTime} >
+
+
+
+
+        <div className="row">
+          <input
+            className="form-control"
+            type="date"
+            name="appDate"
+            // value={appDate}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="row">
+          <input
+            className="form-control"
+            type="time"
+            name="appTime"
+            //value={Time}
+            onChange={handleChange}
+            required
+          />
+        </div>
+        <div className="row">
+          <button className=" submitbtn" onClick={() => setDisplay(false)} type="submit" >Click me </button>
+
+        </div>
+
+
+
+      </form>
+      {display ? <p>nothing to show here</p> :
+
+        <form onSubmit={handleSubmit} >
           <div className="row">
 
 
@@ -369,9 +369,9 @@ function test2() {
 
 
 
-            }
-        </div>
-    )
+      }
+    </div>
+  )
 }
 
 export default test2
