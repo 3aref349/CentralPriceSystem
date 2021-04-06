@@ -350,24 +350,14 @@ function test2() {
                 </Inputdiv>
               </div>
 
-
             </WrapperSection>
             <div className="row">
               <button className=" submitbtn" type="submit" >Submit</button>
 
             </div>
 
-
           </div>
-
-
-
-
-
-
         </form>
-
-
 
       }
     </div>
